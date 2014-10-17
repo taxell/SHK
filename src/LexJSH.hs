@@ -1,4 +1,4 @@
-module LexSHJ(lex) where
+module LexJSH(lex) where
 
 import Prelude hiding( lex )
 

@@ -1,4 +1,4 @@
-module SHJKeywords where
+module JSHKeywords where
 
 import Data.Maybe
 

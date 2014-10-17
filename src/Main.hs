@@ -9,8 +9,8 @@ import SHK
 main :: IO ()
 main = do
 	args <- getArgs
-	let srcFiles = filter isSHJSource args
-	mapM_ compileFile srcFiles
-	let jArgs = map (\a -> if isSHJSource a then toJavaFileExt a else a) args
+	let srcFiles = filter isJSHSource args
+	mapM_ kompile srcFiles
+	let jArgs = map (\a -> if isJSHSource a then toJavaFileExt a else a) args
 	exitCode <- rawSystem "javac" jArgs
 	exitWith exitCode

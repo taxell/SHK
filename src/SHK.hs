@@ -4,11 +4,11 @@ import System.FilePath.Posix
 import Data.List(isSuffixOf)
 import Prelude hiding( lex )
 
-import LexSHJ
-import SHJKeywords
+import LexJSH
+import JSHKeywords
 
-compileFile :: FilePath -> IO ()
-compileFile fp = do
+kompile :: FilePath -> IO ()
+kompile fp = do
 	src <- readFile fp
 	let java = toJava src
 	writeFile (toJavaFileExt fp) java
@@ -16,10 +16,11 @@ compileFile fp = do
 toJavaFileExt :: FilePath -> FilePath
 toJavaFileExt fp = (dropExtension fp) ++ ".java"
 
-isSHJSource :: FilePath -> Bool
-isSHJSource = isSuffixOf ".shj"
+isJSHSource :: FilePath -> Bool
+isJSHSource = isSuffixOf sourceExt
 
 toJava :: String -> String
-toJava p = unlines $ map (unwords . map translate . words) $ lines $ LexSHJ.lex p
+toJava p = unlines $ map (unwords . map translate . words) $ lines $ lex p
 
-        
+sourceExt :: String
+sourceExt = ".jsh" 

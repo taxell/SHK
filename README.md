@@ -15,16 +15,16 @@ taken seriously.
 ###### Content
 * src - The Makefile and source code for SHK. (Surprise, surprise ^^)
 * editor\_support - Syntax highlighting and such support for editors.
-* test\_shj\_src - .shj test files
+* test\_jsh\_src - .jsh test files
 
 Usage
 -----
 SHK works by translating your Swedish code into regular Java code and passes that
 on to javac along with any arguments sent to SHK, so SHK should be called in the
 same way as javac, with the exception that Swedish source code shall have the file
-extension ".shj" and not ".java".
+extension ".jsh" (Java in SwedisH) and not ".java".
 
-See the file keywords.txt for translation of the Swedish keywords.
+See the file keywords.txt (or src/JSHKeywords.hs) for translation of the Swedish keywords.
 
 
 Requirements
@@ -33,7 +33,7 @@ Requirements
 javac - SHK translates your Swedish code into regular Java and uses javac to
 compile that to bytecode.
 
-A Haskell compiler - The project includes a Makefile so make and GHC are
-recommended, but not absolutely necessary.
+A Haskell compiler - The project includes a Makefile that in turn uses GHC, so make 
+and GHC are recommended, but not absolutely necessary.
 
 
