@@ -3,7 +3,8 @@ all:
 
 lightclean:
 	rm -f *.hi *.o *.java
+	rm -f ../test_jsh_src/*.java
 
 clean: lightclean
-	rm -f ../shk *.class
+	rm -f ../shk ../test_jsh_src/*.class 
 
